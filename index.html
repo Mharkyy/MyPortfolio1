@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,662 +6,489 @@
 
     <title>Mharkyy | IT Portfolio</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            color: #222;
-            background: #ffffff;
-            line-height: 1.6;
-        }
-
-        /* NAVIGATION */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            border-bottom: 1px solid #eaeaea;
-            z-index: 1000;
-        }
-
-        .nav-container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 18px 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 22px;
-            font-weight: bold;
-            color: #1f2937;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 25px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #444;
-            font-size: 15px;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #2563eb;
-        }
-
-        /* GENERAL */
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 0 25px;
-        }
-
-        section {
-            padding: 100px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            font-size: 32px;
-            margin-bottom: 10px;
-            color: #1f2937;
-        }
-
-        .section-title p {
-            color: #777;
-        }
-
-        /* HERO */
-        #home {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding-top: 100px;
-        }
-
-        .hero {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .hero-text h1 {
-            font-size: 55px;
-            line-height: 1.1;
-            color: #1f2937;
-            margin-bottom: 20px;
-        }
-
-        .hero-text h1 span {
-            color: #2563eb;
-        }
-
-        .hero-text h3 {
-            font-size: 22px;
-            font-weight: normal;
-            color: #555;
-            margin-bottom: 20px;
-        }
-
-        .hero-text p {
-            max-width: 600px;
-            color: #666;
-            margin-bottom: 30px;
-        }
-
-        .buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 22px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .btn-primary {
-            background: #2563eb;
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: #1d4ed8;
-        }
-
-        .btn-secondary {
-            border: 1px solid #ddd;
-            color: #333;
-        }
-
-        .btn-secondary:hover {
-            border-color: #2563eb;
-            color: #2563eb;
-        }
-
-        .hero-card {
-            background: #f8fafc;
-            border: 1px solid #e5e7eb;
-            border-radius: 15px;
-            padding: 45px;
-            text-align: center;
-        }
-
-        .hero-card .initial {
-            width: 130px;
-            height: 130px;
-            margin: auto;
-            border-radius: 50%;
-            background: #2563eb;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 42px;
-            font-weight: bold;
-        }
-
-        /* ABOUT */
-        #about {
-            background: #f8fafc;
-        }
-
-        .about-content {
-            max-width: 850px;
-            margin: auto;
-            text-align: center;
-            color: #555;
-        }
-
-        /* SKILLS */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .skill-card {
-            padding: 25px;
-            border: 1px solid #e5e7eb;
-            border-radius: 10px;
-            background: white;
-            transition: 0.3s;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-5px);
-            border-color: #2563eb;
-        }
-
-        .skill-card h3 {
-            margin-bottom: 10px;
-            color: #1f2937;
-        }
-
-        .skill-card p {
-            color: #666;
-            font-size: 14px;
-        }
-
-        /* PROJECTS */
-        #projects {
-            background: #f8fafc;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-        }
-
-        .project-card {
-            background: white;
-            border: 1px solid #e5e7eb;
-            border-radius: 10px;
-            padding: 30px;
-        }
-
-        .project-card h3 {
-            margin-bottom: 12px;
-            color: #1f2937;
-        }
-
-        .project-card p {
-            color: #666;
-            margin-bottom: 20px;
-        }
-
-        .tag {
-            display: inline-block;
-            background: #eff6ff;
-            color: #2563eb;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 12px;
-            margin: 3px;
-        }
-
-        /* EXPERIENCE */
-        .experience-card {
-            max-width: 850px;
-            margin: auto;
-            border-left: 3px solid #2563eb;
-            padding: 10px 0 10px 30px;
-        }
-
-        .experience-card h3 {
-            color: #1f2937;
-        }
-
-        .experience-card .date {
-            color: #2563eb;
-            font-size: 14px;
-            margin: 5px 0 15px;
-        }
-
-        .experience-card p {
-            color: #666;
-        }
-
-        /* EDUCATION */
-        #education {
-            background: #f8fafc;
-        }
-
-        .education-card {
-            max-width: 800px;
-            margin: auto;
-            text-align: center;
-            border: 1px solid #e5e7eb;
-            padding: 30px;
-            border-radius: 10px;
-            background: white;
-        }
-
-        .education-card h3 {
-            color: #1f2937;
-        }
-
-        .education-card p {
-            color: #666;
-        }
-
-        /* CONTACT */
-        .contact-content {
-            text-align: center;
-            max-width: 700px;
-            margin: auto;
-        }
-
-        .contact-content p {
-            color: #666;
-            margin-bottom: 25px;
-        }
-
-        /* FOOTER */
-        footer {
-            text-align: center;
-            padding: 25px;
-            background: #1f2937;
-            color: #ddd;
-            font-size: 14px;
-        }
-
-        /* MOBILE */
-        @media (max-width: 768px) {
-
-            .nav-links {
-                display: none;
-            }
-
-            .hero {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero-text p {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .buttons {
-                justify-content: center;
-            }
-
-            .hero-text h1 {
-                font-size: 42px;
-            }
-
-            .skills-grid,
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            section {
-                padding: 80px 0;
-            }
-        }
-    </style>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- NAVIGATION -->
-    <nav>
-        <div class="nav-container">
-            <div class="logo">Mharkyy</div>
+    <!-- ================= NAVIGATION ================= -->
 
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+    <header class="navbar">
+        <div class="container nav-container">
+
+            <a href="#home" class="logo">
+                Mharkyy<span>.</span>
+            </a>
+
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#experience">Experience</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
         </div>
-    </nav>
+    </header>
 
-    <!-- HOME -->
-    <section id="home">
-        <div class="container hero">
+
+    <!-- ================= HOME ================= -->
+
+    <section id="home" class="hero">
+
+        <div class="container hero-content">
 
             <div class="hero-text">
-                <h1>Hi, I'm <span>Mharkyy.</span></h1>
 
-                <h3>Bachelor of Science in Information Technology</h3>
+                <p class="eyebrow">IT GRADUATE • TECHNOLOGY ENTHUSIAST</p>
 
-                <p>
-                    A fresh IT graduate interested in technology, networking,
-                    programming, and practical IT solutions. I am continuously
-                    developing my technical and professional skills while
-                    looking for opportunities to learn and contribute.
+                <h1>
+                    Hi, I'm <span>Mharkyy.</span>
+                </h1>
+
+                <h2>
+                    Bachelor of Science in Information Technology Graduate
+                </h2>
+
+                <p class="hero-description">
+                    A motivated IT graduate interested in networking, web development,
+                    programming, and practical technology solutions.
+                    I enjoy learning new skills and turning ideas into useful systems.
                 </p>
 
-                <div class="buttons">
-                    <a href="#projects" class="btn btn-primary">
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn primary-btn">
                         View My Projects
                     </a>
 
-                    <a href="#contact" class="btn btn-secondary">
+                    <a href="#contact" class="btn secondary-btn">
                         Contact Me
                     </a>
                 </div>
+
             </div>
+
 
             <div class="hero-card">
-                <div class="initial">M</div>
 
-                <h3 style="margin-top: 20px;">
-                    Aspiring IT Professional
-                </h3>
+                <div class="profile-placeholder">
+                    <span>MK</span>
+                </div>
 
-                <p style="color: #777;">
-                    Technology • Networking • Programming
+                <h3>Information Technology</h3>
+
+                <p>
+                    Fresh Graduate<br>
+                    Problem Solver<br>
+                    Continuous Learner
                 </p>
+
             </div>
 
         </div>
+
     </section>
 
-    <!-- ABOUT -->
-    <section id="about">
+
+    <!-- ================= ABOUT ================= -->
+
+    <section id="about" class="section">
+
         <div class="container">
 
-            <div class="section-title">
-                <h2>About Me</h2>
-                <p>A little about my background</p>
+            <div class="section-heading">
+                <p class="section-label">ABOUT ME</p>
+                <h2>Who I Am</h2>
             </div>
 
-            <div class="about-content">
-                <p>
-                    I am a Bachelor of Science in Information Technology graduate
-                    from Isabela State University – Ilagan. I have experience
-                    working with basic programming, networking, hardware
-                    troubleshooting, databases, and web-based systems through
-                    academic projects and practical training.
-                </p>
 
-                <br>
+            <div class="about-grid">
 
-                <p>
-                    I am particularly interested in improving my skills in
-                    networking, programming, web development, and information
-                    technology solutions. I value continuous learning,
-                    professionalism, teamwork, and the opportunity to contribute
-                    to an organization.
-                </p>
+                <div class="about-text">
+
+                    <p>
+                        I am a Bachelor of Science in Information Technology graduate
+                        from Isabela State University – Ilagan.
+                    </p>
+
+                    <p>
+                        During my studies, I developed an interest in information
+                        technology, networking, programming, web development,
+                        database systems, and hardware troubleshooting.
+                    </p>
+
+                    <p>
+                        I also gained practical experience through my On-the-Job
+                        Training, where I worked with documents, data, office
+                        applications, computer equipment, and administrative tasks.
+                    </p>
+
+                    <p>
+                        As a fresh graduate, I am eager to learn, improve my technical
+                        skills, and contribute positively to a professional team.
+                    </p>
+
+                </div>
+
+
+                <div class="about-info">
+
+                    <div class="info-box">
+                        <span>🎓</span>
+                        <div>
+                            <strong>Education</strong>
+                            <p>BS Information Technology</p>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <span>💻</span>
+                        <div>
+                            <strong>Focus</strong>
+                            <p>IT & Technology</p>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <span>📍</span>
+                        <div>
+                            <strong>Location</strong>
+                            <p>Ilagan City, Isabela</p>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <span>🚀</span>
+                        <div>
+                            <strong>Career Goal</strong>
+                            <p>Learn, grow, and contribute</p>
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
 
         </div>
+
     </section>
 
-    <!-- SKILLS -->
-    <section id="skills">
+
+    <!-- ================= SKILLS ================= -->
+
+    <section id="skills" class="section light-section">
+
         <div class="container">
 
-            <div class="section-title">
-                <h2>Skills</h2>
-                <p>Technologies and areas I have worked with</p>
+            <div class="section-heading">
+                <p class="section-label">MY SKILLS</p>
+                <h2>Technical Skills</h2>
+                <p>
+                    Skills and technologies I have worked with or am currently developing.
+                </p>
             </div>
+
 
             <div class="skills-grid">
 
                 <div class="skill-card">
+                    <div class="skill-icon">🌐</div>
                     <h3>Web Development</h3>
-                    <p>
-                        Basic HTML, CSS, JavaScript and web-based system
-                        development.
-                    </p>
+                    <p>HTML, CSS, basic JavaScript and responsive web design.</p>
                 </div>
 
                 <div class="skill-card">
-                    <h3>Networking</h3>
-                    <p>
-                        Basic networking concepts, configuration and
-                        Cisco Packet Tracer practice.
-                    </p>
-                </div>
-
-                <div class="skill-card">
+                    <div class="skill-icon">🖥️</div>
                     <h3>Programming</h3>
-                    <p>
-                        Basic programming logic, database integration and
-                        application development.
-                    </p>
+                    <p>Basic programming concepts, logic, debugging and problem solving.</p>
                 </div>
 
                 <div class="skill-card">
+                    <div class="skill-icon">🌐</div>
+                    <h3>Networking</h3>
+                    <p>Basic networking concepts and Cisco Packet Tracer practice.</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">🗄️</div>
                     <h3>Database</h3>
-                    <p>
-                        Experience working with databases and CRUD-based
-                        web systems.
-                    </p>
+                    <p>Basic database design, SQL concepts and data management.</p>
                 </div>
 
                 <div class="skill-card">
+                    <div class="skill-icon">📊</div>
                     <h3>Microsoft Office</h3>
-                    <p>
-                        Microsoft Word, Excel, document management and
-                        spreadsheet organization.
-                    </p>
+                    <p>Microsoft Word, Excel, PowerPoint and document organization.</p>
                 </div>
 
                 <div class="skill-card">
-                    <h3>Hardware Troubleshooting</h3>
-                    <p>
-                        Basic computer, printer and hardware troubleshooting
-                        and maintenance.
-                    </p>
+                    <div class="skill-icon">🔧</div>
+                    <h3>Hardware & Troubleshooting</h3>
+                    <p>Basic computer, printer and hardware troubleshooting.</p>
                 </div>
 
             </div>
+
         </div>
+
     </section>
 
-    <!-- PROJECTS -->
-    <section id="projects">
+
+    <!-- ================= PROJECTS ================= -->
+
+    <section id="projects" class="section">
+
         <div class="container">
 
-            <div class="section-title">
-                <h2>Projects</h2>
-                <p>Selected academic and personal projects</p>
+            <div class="section-heading">
+                <p class="section-label">MY WORK</p>
+                <h2>Featured Project</h2>
             </div>
 
-            <div class="projects-grid">
 
-                <div class="project-card">
+            <div class="project-card">
+
+                <div class="project-number">
+                    01
+                </div>
+
+                <div class="project-content">
+
+                    <p class="project-category">
+                        CAPSTONE PROJECT • IoT • WEB SYSTEM
+                    </p>
+
                     <h3>
                         Smart ICT Door Lock with Time-Based Access Control
                     </h3>
 
                     <p>
-                        An IoT-based smart door lock system designed to manage
-                        access to ICT rooms using RFID authentication,
-                        time-based scheduling, emergency access, and a
-                        web-based management system.
+                        A smart access-control system designed for ICT rooms.
+                        The system combines RFID authentication, time-based access
+                        control, IoT connectivity, emergency access, bypass control,
+                        alerts, and credential security.
                     </p>
 
-                    <span class="tag">ESP32</span>
-                    <span class="tag">RFID</span>
-                    <span class="tag">IoT</span>
-                    <span class="tag">Database</span>
-                    <span class="tag">Web Development</span>
+                    <div class="project-tags">
+                        <span>ESP32</span>
+                        <span>RFID</span>
+                        <span>IoT</span>
+                        <span>PHP</span>
+                        <span>MySQL</span>
+                        <span>Web Dashboard</span>
+                    </div>
+
                 </div>
 
-                <div class="project-card">
-                    <h3>Networking Practice</h3>
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    02
+                </div>
+
+                <div class="project-content">
+
+                    <p class="project-category">
+                        PRACTICE PROJECT • DATA MANAGEMENT
+                    </p>
+
+                    <h3>
+                        Inventory Management Workbook
+                    </h3>
 
                     <p>
-                        Hands-on networking exercises involving network
-                        topology design, IP addressing, device configuration,
-                        and connectivity testing using Cisco Packet Tracer.
+                        A spreadsheet-based inventory concept for monitoring stock,
+                        sales, supplier deliveries, returns, damaged items, and
+                        low-stock indicators.
                     </p>
 
-                    <span class="tag">Cisco Packet Tracer</span>
-                    <span class="tag">Networking</span>
-                    <span class="tag">TCP/IP</span>
+                    <div class="project-tags">
+                        <span>Excel</span>
+                        <span>Inventory</span>
+                        <span>Data Management</span>
+                    </div>
+
                 </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience">
-        <div class="container">
-
-            <div class="section-title">
-                <h2>Experience</h2>
-                <p>Practical training and work experience</p>
-            </div>
-
-            <div class="experience-card">
-
-                <h3>
-                    On-the-Job Training — BFP Ilagan City / Isabela Fire Station
-                </h3>
-
-                <div class="date">
-                    March 9, 2026 – May 15, 2026
-                </div>
-
-                <p>
-                    Assisted with administrative and technical tasks including
-                    document processing, data recording, Microsoft Excel
-                    organization, checking and sorting documents, printer
-                    troubleshooting, and other office-related responsibilities.
-                </p>
 
             </div>
 
         </div>
+
     </section>
 
-    <!-- EDUCATION -->
-    <section id="education">
+
+    <!-- ================= EXPERIENCE ================= -->
+
+    <section id="experience" class="section light-section">
+
         <div class="container">
 
-            <div class="section-title">
-                <h2>Education</h2>
-                <p>Academic background</p>
+            <div class="section-heading">
+                <p class="section-label">EXPERIENCE</p>
+                <h2>On-the-Job Training</h2>
             </div>
+
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+
+                    <div class="timeline-dot"></div>
+
+                    <div class="timeline-content">
+
+                        <span class="timeline-date">
+                            March 9 – May 15, 2026
+                        </span>
+
+                        <h3>
+                            On-the-Job Trainee
+                        </h3>
+
+                        <h4>
+                            Bureau of Fire Protection – Ilagan City
+                        </h4>
+
+                        <p>
+                            Gained practical experience in administrative and
+                            technology-related tasks, including document processing,
+                            data entry, Microsoft Excel, computer and printer
+                            troubleshooting, record organization, and office support.
+                        </p>
+
+                        <ul>
+                            <li>Prepared and organized documents and records.</li>
+                            <li>Performed data entry and Excel-related tasks.</li>
+                            <li>Assisted with administrative processing.</li>
+                            <li>Performed basic printer and computer troubleshooting.</li>
+                            <li>Handled documents with confidentiality and attention to detail.</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= EDUCATION ================= -->
+
+    <section id="education" class="section">
+
+        <div class="container">
+
+            <div class="section-heading">
+                <p class="section-label">EDUCATION</p>
+                <h2>Academic Background</h2>
+            </div>
+
 
             <div class="education-card">
 
-                <h3>
-                    Bachelor of Science in Information Technology
-                </h3>
+                <div class="education-icon">
+                    🎓
+                </div>
 
-                <p>
-                    Isabela State University – Ilagan
-                </p>
+                <div>
 
-                <p>
-                    Philippines
-                </p>
+                    <span class="education-year">
+                        GRADUATE
+                    </span>
+
+                    <h3>
+                        Bachelor of Science in Information Technology
+                    </h3>
+
+                    <p>
+                        Isabela State University – Ilagan
+                    </p>
+
+                </div>
 
             </div>
 
         </div>
+
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact">
-        <div class="container">
 
-            <div class="section-title">
-                <h2>Let's Connect</h2>
-                <p>I'm open to learning and professional opportunities.</p>
-            </div>
+    <!-- ================= CONTACT ================= -->
 
-            <div class="contact-content">
+    <section id="contact" class="contact-section">
+
+        <div class="container contact-container">
+
+            <div>
+
+                <p class="section-label">GET IN TOUCH</p>
+
+                <h2>
+                    Let's Connect.
+                </h2>
 
                 <p>
-                    If you would like to get in touch with me regarding
-                    employment, collaboration, or opportunities in IT,
-                    feel free to contact me.
+                    I am open to opportunities where I can learn, contribute,
+                    and grow professionally.
                 </p>
 
-                <a href="https://github.com/Mharkyy"
-                   target="_blank"
-                   class="btn btn-primary">
-                    Visit My GitHub
+            </div>
+
+
+            <div class="contact-links">
+
+                <a href="mailto:your-email@example.com">
+                    <span>✉️</span>
+                    your-email@example.com
+                </a>
+
+                <a href="#">
+                    <span>💼</span>
+                    LinkedIn
+                </a>
+
+                <a href="https://github.com/Mharkyy" target="_blank">
+                    <span>🐙</span>
+                    GitHub
                 </a>
 
             </div>
 
         </div>
+
     </section>
 
-    <!-- FOOTER -->
+
+    <!-- ================= FOOTER ================= -->
+
     <footer>
-        © 2026 Mharkyy. All Rights Reserved.
+
+        <div class="container footer-content">
+
+            <p>
+                © 2026 Mharkyy. All rights reserved.
+            </p>
+
+            <p>
+                Built with HTML & CSS.
+            </p>
+
+        </div>
+
     </footer>
 
 </body>
 </html>
-```
